@@ -4,11 +4,11 @@ endif() # DRACO_CMAKE_DRACO_EMSCRIPTEN_CMAKE_
 
 # Checks environment for Emscripten prerequisites.
 macro(draco_check_emscripten_environment)
-  if(NOT PYTHONINTERP_FOUND)
-    message(
-      FATAL_ERROR
-        "Python required for Emscripten builds, but cmake cannot find it.")
-  endif()
+  #if(NOT PYTHONINTERP_FOUND)
+  #  message(
+  #    FATAL_ERROR
+  #      "Python required for Emscripten builds, but cmake cannot find it.")
+  #endif()
   if(NOT EXISTS "$ENV{EMSCRIPTEN}")
     message(
       FATAL_ERROR
@@ -79,6 +79,7 @@ macro(draco_generate_emscripten_glue)
   endif()
 
   # Generate the glue source.
+  set(PYTHON_EXECUTABLE "${Python3_EXECUTABLE}")
   execute_process(COMMAND ${PYTHON_EXECUTABLE}
                           $ENV{EMSCRIPTEN}/tools/webidl_binder.py
                           ${glue_INPUT_IDL} ${glue_OUTPUT_PATH})
