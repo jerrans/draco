@@ -23,7 +23,6 @@ endif()
 
 include(CMakePackageConfigHelpers)
 find_package (Python3 COMPONENTS Interpreter)
-#include(FindPythonInterp)
 include("${draco_root}/cmake/draco_build_definitions.cmake")
 include("${draco_root}/cmake/draco_cpu_detection.cmake")
 include("${draco_root}/cmake/draco_emscripten.cmake")

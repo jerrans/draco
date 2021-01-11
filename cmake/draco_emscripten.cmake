@@ -4,11 +4,6 @@ endif() # DRACO_CMAKE_DRACO_EMSCRIPTEN_CMAKE_
 
 # Checks environment for Emscripten prerequisites.
 macro(draco_check_emscripten_environment)
-  #if(NOT PYTHONINTERP_FOUND)
-  #  message(
-  #    FATAL_ERROR
-  #      "Python required for Emscripten builds, but cmake cannot find it.")
-  #endif()
   if(NOT EXISTS "$ENV{EMSCRIPTEN}")
     message(
       FATAL_ERROR
